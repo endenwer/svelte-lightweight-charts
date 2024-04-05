@@ -80,6 +80,7 @@
     "yargs": "16.2.0"
   },
   "scripts": {
+    "postinstall": "npm run build-package",
     "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js",
     "prepublishOnly": "npm run build-package",
     "build-package": "gulp build -f gulpfile.cjs",
