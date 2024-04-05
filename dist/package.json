@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "svelte-lightweight-charts",
   "version": "2.2.0",
   "description": "Svelte wrapper for financial lightweight charts built with HTML5 canvas",
@@ -23,18 +22,13 @@
     "charts"
   ],
   "type": "module",
-  "exports": "./dist/index.js",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "exports": "./index.js",
+  "main": "index.js",
+  "module": "index.js",
   "files": [
-    "dist/**"
+    "**"
   ],
   "sideEffects": false,
-  "engines": {
-    "npm": "^8.5.0",
-    "pnpm": "^7.27.0",
-    "node": ">=16.14.2"
-  },
   "packageManager": "pnpm@7.27.0",
   "devDependencies": {
     "@babel/core": "7.20.12",
@@ -79,27 +73,9 @@
     "webpack-dev-server": "4.11.1",
     "yargs": "16.2.0"
   },
-  "scripts": {
-    "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js",
-    "prepublishOnly": "npm run build-package",
-    "build-package": "gulp build -f gulpfile.cjs",
-    "build-demo": "npm run build-package && cross-env NODE_ENV=production webpack --bail",
-    "start": "npm run build-package && webpack serve --no-static",
-    "samples": "gulp samples -f gulpfile.cjs",
-    "lint": "eslint .",
-    "validate": "svelte-check"
-  },
   "peerDependencies": {
     "lightweight-charts": ">=4.0.0",
     "svelte": ">=3.44.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "svelte-check && lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js|*.ts|*.svelte": "eslint --cache --fix"
   },
   "jest": {
     "testEnvironment": "jsdom",
